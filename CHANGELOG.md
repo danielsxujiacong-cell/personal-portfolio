@@ -4,3 +4,4 @@
 
 - Restored the complete portfolio HTML snapshot from Codex session history.
 - Preserved the recovered page source, including its animations and Spline fallback.
+- Published the static site from `main` with GitHub Pages.

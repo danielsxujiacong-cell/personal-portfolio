@@ -24,4 +24,4 @@ Present Daniel's AI, automation, and product design work as a scroll driven pers
 
 ## Verification
 
-Serve the directory with `python -m http.server 8767 --bind 127.0.0.1`. Loading mask dismissal, desktop Pin/Scrub, Lenis, cursor, mobile non-pinned layout, and browser console were verified on 2026-09-26.
+Serve the directory with `python -m http.server 8767 --bind 127.0.0.1`. Loading mask dismissal, desktop Pin/Scrub, Lenis, cursor, mobile non-pinned layout, and browser console were verified on 2026-09-26. GitHub Pages returned HTTP 200 with expected content at `https://danielsxujiacong-cell.github.io/personal-portfolio/`.
