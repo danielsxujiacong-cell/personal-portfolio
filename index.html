@@ -9,7 +9,7 @@
     :root { color-scheme: dark; --bg: #0d0d0d; --fg: #f5f5f0; --muted: #858585; --line: rgba(255,255,255,.14); }
     * { box-sizing: border-box; }
     html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x: hidden; }
-    body { min-width: 320px; }
+    body { min-width: min(320px, 100%); }
     body.has-custom-cursor, body.has-custom-cursor a { cursor: none; }
     #loader { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; background: #000; color: rgba(255,255,255,.72); }
     #loader__text { margin: 0; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
@@ -42,6 +42,78 @@
     .links { display: flex; justify-content: center; gap: 30px; color: var(--muted); font-size: 13px; }
     a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 4px; transition: color .25s, border-color .25s; }
     a:hover { color: var(--fg); border-color: var(--fg); }
+    .content-section { padding: clamp(100px, 13vw, 190px) 8vw; border-top: 1px solid rgba(255,255,255,.08); }
+    .section-inner { width: min(100%, 1160px); margin: 0 auto; }
+    .content-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 58px; }
+    .content-heading h2 { max-width: 760px; margin-bottom: 0; font-size: clamp(2.8rem, 7vw, 6.7rem); line-height: .92; letter-spacing: -.075em; font-weight: 500; }
+    .section-index { margin: 0 0 8px; color: rgba(255,255,255,.42); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+    .workspace-section { padding-top: clamp(110px, 15vw, 220px); padding-bottom: clamp(110px, 15vw, 210px); overflow: hidden; }
+    .workspace-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; margin: 0 0 58px; }
+    .workspace-summary p { max-width: 430px; margin: 0; color: #a4a4a0; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65; }
+    .workspace-summary strong { display: block; margin-bottom: 12px; color: rgba(255,255,255,.42); font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
+    .workspace-window-wrap { perspective: 1400px; }
+    .workspace-window { overflow: hidden; border: 1px solid rgba(255,255,255,.17); border-radius: 17px; background: #101010; box-shadow: 0 38px 110px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.04) inset; transform-origin: center 75%; will-change: transform, opacity; }
+    .window-bar { position: relative; height: 47px; display: flex; align-items: center; gap: 7px; padding: 0 17px; border-bottom: 1px solid rgba(255,255,255,.09); background: #151515; }
+    .window-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.2); }
+    .window-address { position: absolute; left: 50%; color: rgba(255,255,255,.3); font-size: 10px; letter-spacing: .04em; transform: translateX(-50%); }
+    .dashboard { min-height: 440px; display: grid; grid-template-columns: 190px minmax(0, 1fr); }
+    .dashboard-sidebar { padding: 24px 13px; border-right: 1px solid rgba(255,255,255,.08); }
+    .dashboard-brand { margin: 0 10px 30px; color: rgba(255,255,255,.92); font-size: 12px; font-weight: 600; letter-spacing: -.02em; }
+    .dashboard-nav { display: grid; gap: 5px; }
+    .dashboard-nav span { display: flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 10px; border-radius: 7px; color: rgba(255,255,255,.47); font-size: 11px; }
+    .dashboard-nav span:first-child { color: #fff; background: rgba(255,255,255,.09); }
+    .nav-glyph { width: 14px; color: rgba(255,255,255,.55); font-size: 12px; text-align: center; }
+    .dashboard-main { min-width: 0; padding: clamp(22px, 4vw, 45px); }
+    .dashboard-topline { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; color: rgba(255,255,255,.35); font-size: 10px; }
+    .dashboard-topline span:last-child { white-space: nowrap; }
+    .dashboard-greeting { margin-bottom: 8px; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1; letter-spacing: -.06em; font-weight: 500; }
+    .dashboard-subtitle { margin-bottom: 28px; color: rgba(255,255,255,.42); font-size: 12px; }
+    .dashboard-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 28px; border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .dashboard-stat { padding: 16px 12px 16px 0; }
+    .dashboard-stat + .dashboard-stat { padding-left: 16px; border-left: 1px solid rgba(255,255,255,.1); }
+    .dashboard-stat strong { display: block; margin-bottom: 6px; color: rgba(255,255,255,.92); font-size: 20px; font-weight: 500; letter-spacing: -.04em; }
+    .dashboard-stat span { color: rgba(255,255,255,.38); font-size: 10px; }
+    .dashboard-lower { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; }
+    .dashboard-label { margin-bottom: 12px; color: rgba(255,255,255,.4); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+    .workspace-project { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.08); }
+    .workspace-project-mark { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; color: rgba(255,255,255,.7); font-size: 10px; }
+    .workspace-project-copy { min-width: 0; flex: 1; }
+    .workspace-project-copy strong, .workspace-project-copy small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .workspace-project-copy strong { margin-bottom: 4px; color: rgba(255,255,255,.78); font-size: 10px; font-weight: 500; }
+    .workspace-project-copy small { color: rgba(255,255,255,.34); font-size: 9px; }
+    .workspace-status { color: rgba(255,255,255,.45); font-size: 9px; white-space: nowrap; }
+    .assistant-panel { min-height: 115px; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 9px; background: rgba(255,255,255,.025); }
+    .assistant-panel p { max-width: 210px; margin: 0; color: rgba(255,255,255,.58); font-size: 10px; line-height: 1.5; }
+    .assistant-prompt { display: flex; justify-content: space-between; gap: 10px; padding-top: 9px; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.3); font-size: 9px; }
+    .intelligence-section { background: #101010; }
+    .intelligence-intro { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 70px; }
+    .intelligence-intro h2 { max-width: 750px; margin: 0; font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: .92; letter-spacing: -.075em; font-weight: 500; }
+    .intelligence-intro p { max-width: 260px; margin: 0 0 5px; color: rgba(255,255,255,.45); font-size: 13px; line-height: 1.6; }
+    .workflow { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .workflow::before { content: ""; position: absolute; top: 18px; left: 8%; right: 8%; height: 1px; background: rgba(255,255,255,.16); }
+    .workflow-step { position: relative; padding: 0 16px 0 0; }
+    .workflow-node { position: relative; z-index: 1; width: 37px; height: 37px; display: grid; place-items: center; margin-bottom: 24px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; background: #101010; color: rgba(255,255,255,.76); font-size: 10px; }
+    .workflow-step h3 { margin-bottom: 8px; font-size: clamp(.95rem, 1.5vw, 1.15rem); font-weight: 500; letter-spacing: -.03em; }
+    .workflow-step p { max-width: 170px; margin: 0; color: rgba(255,255,255,.37); font-size: 10px; line-height: 1.5; }
+    .experiments-section { padding-top: clamp(100px, 12vw, 170px); padding-bottom: clamp(100px, 12vw, 170px); }
+    .experiments-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 7vw; border-top: 1px solid rgba(255,255,255,.14); }
+    .experiment-row { min-width: 0; display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 105px; border-bottom: 1px solid rgba(255,255,255,.12); transition: padding .25s ease, border-color .25s ease; }
+    .experiment-row:hover { padding: 0 7px; border-color: rgba(255,255,255,.38); }
+    .experiment-number { color: rgba(255,255,255,.3); font-size: 9px; }
+    .experiment-copy h3 { margin: 0 0 5px; font-size: 16px; font-weight: 500; letter-spacing: -.03em; }
+    .experiment-copy p { margin: 0; color: rgba(255,255,255,.4); font-size: 10px; }
+    .experiment-link { color: rgba(255,255,255,.47); font-size: 10px; white-space: nowrap; }
+    .work-section { padding-top: clamp(100px, 12vw, 170px); padding-bottom: clamp(110px, 14vw, 200px); background: #101010; }
+    .work-heading { margin-bottom: 76px; }
+    .work-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.17); }
+    .work-step { min-height: 142px; padding: 20px 18px 0 0; border-right: 1px solid rgba(255,255,255,.1); }
+    .work-step:last-child { border-right: 0; }
+    .work-step span { display: block; margin-bottom: 34px; color: rgba(255,255,255,.33); font-size: 10px; }
+    .work-step h3 { margin: 0; font-size: clamp(1.05rem, 2vw, 1.55rem); font-weight: 400; letter-spacing: -.04em; }
+    .contact-section { min-height: 78vh; display: grid; place-items: center; padding: 100px 8vw 76px; }
+    .contact-section .outro__content { max-width: 1120px; }
+    .contact-section h2 { margin-bottom: 46px; }
+    .contact-note { margin: 34px 0 0; color: rgba(255,255,255,.28); font-size: 10px; letter-spacing: .04em; }
     @media (max-width: 700px) {
       .showcase__model { width: 82vw; height: 82vw; }
       .copy { width: 74vw; left: 13vw; right: auto; text-align: center; }
@@ -56,6 +128,48 @@
       .copy, .copy--left, .copy--right { position: relative; inset: auto; top: auto; right: auto; left: auto; width: 100%; transform: none; text-align: center; opacity: 1; }
       .copy--left { order: 1; } .showcase__model { order: 2; } .copy--right { order: 3; }
       .project-tags { justify-content: center; }
+      .content-section { padding-right: 7vw; padding-left: 7vw; }
+      .content-heading, .intelligence-intro { display: block; margin-bottom: 38px; }
+      .content-heading h2, .intelligence-intro h2 { font-size: clamp(2.8rem, 13vw, 4.7rem); }
+      .section-index { margin-top: 22px; }
+      .workspace-summary { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
+      .workspace-window { border-radius: 12px; }
+      .window-bar { height: 39px; padding: 0 12px; }
+      .window-address { font-size: 8px; }
+      .dashboard { display: block; min-height: 0; }
+      .dashboard-sidebar { padding: 14px 12px 12px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .dashboard-brand { margin: 0 0 12px; }
+      .dashboard-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+      .dashboard-nav span { gap: 5px; min-height: 30px; padding: 0 5px; font-size: 9px; }
+      .nav-glyph { width: 10px; font-size: 10px; }
+      .dashboard-main { padding: 22px 16px; }
+      .dashboard-topline { font-size: 8px; }
+      .dashboard-greeting { font-size: 1.8rem; }
+      .dashboard-stats { margin-bottom: 21px; }
+      .dashboard-stat strong { font-size: 17px; }
+      .dashboard-stat span { font-size: 8px; }
+      .dashboard-lower { grid-template-columns: 1fr; gap: 20px; }
+      .assistant-panel { min-height: 100px; }
+      .intelligence-intro p { margin-top: 20px; }
+      .workflow { grid-template-columns: 1fr; gap: 26px; padding-left: 2px; }
+      .workflow::before { top: 18px; bottom: 18px; left: 18px; right: auto; width: 1px; height: auto; }
+      .workflow-step { display: grid; grid-template-columns: 37px 1fr; column-gap: 16px; padding: 0; }
+      .workflow-node { grid-row: span 2; margin: 0; }
+      .workflow-step h3 { align-self: end; margin: 1px 0 5px; }
+      .workflow-step p { max-width: none; }
+      .experiments-list { grid-template-columns: 1fr; }
+      .experiment-row { min-height: 88px; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 9px; }
+      .experiment-copy h3 { font-size: 15px; }
+      .experiment-copy p { font-size: 9px; }
+      .experiment-link { font-size: 9px; }
+      .work-heading { margin-bottom: 42px; }
+      .work-steps { grid-template-columns: 1fr; border-top: 0; }
+      .work-step { min-height: 78px; display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 10px; padding: 0; border-right: 0; border-top: 1px solid rgba(255,255,255,.14); }
+      .work-step span { margin: 0; }
+      .work-step h3 { font-size: 1.35rem; }
+      .contact-section { min-height: 70vh; padding: 100px 7vw 70px; }
+      .contact-section h2 { margin-bottom: 34px; }
+      .links { flex-wrap: wrap; gap: 22px; }
     }
   </style>
 </head>
@@ -100,11 +214,121 @@
       </div>
     </section>
 
-    <section class="section outro">
+    <section class="section content-section workspace-section" id="daniel-workspace">
+      <div class="section-inner">
+        <div class="content-heading">
+          <div>
+            <p class="eyebrow">Featured Project 01</p>
+            <h2>Daniel<br />Workspace</h2>
+          </div>
+          <p class="section-index">Personal AI Workspace</p>
+        </div>
+        <div class="workspace-summary" data-reveal-group>
+          <p><strong>Problem</strong>Projects, GitHub, tasks, reference material, and AI conversations live in separate places.</p>
+          <p><strong>Solution</strong>A single personal AI Workspace that brings the work and its context together.</p>
+        </div>
+        <div class="workspace-window-wrap">
+          <div class="workspace-window" aria-label="Daniel Workspace dashboard mockup">
+            <div class="window-bar" aria-hidden="true">
+              <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+              <span class="window-address">workspace.local</span>
+            </div>
+            <div class="dashboard">
+              <aside class="dashboard-sidebar" aria-label="Workspace sections">
+                <p class="dashboard-brand">Daniel Workspace</p>
+                <nav class="dashboard-nav">
+                  <span><i class="nav-glyph" aria-hidden="true">⌂</i>Projects</span>
+                  <span><i class="nav-glyph" aria-hidden="true">✓</i>Tasks</span>
+                  <span><i class="nav-glyph" aria-hidden="true">⌕</i>Knowledge</span>
+                  <span><i class="nav-glyph" aria-hidden="true">◇</i>Decisions</span>
+                  <span><i class="nav-glyph" aria-hidden="true">✳</i>AI Assistant</span>
+                </nav>
+              </aside>
+              <div class="dashboard-main">
+                <div class="dashboard-topline"><span>PERSONAL WORKSPACE</span><span>MONDAY, 9:41 AM</span></div>
+                <h3 class="dashboard-greeting">Good morning, Daniel.</h3>
+                <p class="dashboard-subtitle">Your projects and next steps, in one place.</p>
+                <div class="dashboard-stats" aria-label="Workspace overview">
+                  <div class="dashboard-stat"><strong>04</strong><span>Active projects</span></div>
+                  <div class="dashboard-stat"><strong>12</strong><span>Open tasks</span></div>
+                  <div class="dashboard-stat"><strong>03</strong><span>Recent decisions</span></div>
+                </div>
+                <div class="dashboard-lower">
+                  <div>
+                    <p class="dashboard-label">Continue where you left off</p>
+                    <div class="workspace-project"><span class="workspace-project-mark">DW</span><span class="workspace-project-copy"><strong>Personal AI Workspace</strong><small>Updated project context · 2h ago</small></span><span class="workspace-status">In progress</span></div>
+                    <div class="workspace-project"><span class="workspace-project-mark">CI</span><span class="workspace-project-copy"><strong>Content Intelligence</strong><small>Review workflow draft · Today</small></span><span class="workspace-status">Next up</span></div>
+                  </div>
+                  <div>
+                    <p class="dashboard-label">AI Assistant</p>
+                    <div class="assistant-panel"><p>“Summarize what changed across my active projects this week.”</p><div class="assistant-prompt"><span>Ask with your workspace context</span><span>↗</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content-section intelligence-section" id="content-intelligence">
+      <div class="section-inner">
+        <div class="intelligence-intro">
+          <div>
+            <p class="eyebrow">Featured Project 02</p>
+            <h2>AI Content<br />Intelligence</h2>
+          </div>
+          <p>An AI + Automation workflow that turns selected sources into useful, platform-ready content.</p>
+        </div>
+        <div class="workflow" aria-label="AI content workflow">
+          <article class="workflow-step"><span class="workflow-node">01</span><h3>Sources</h3><p>Collect signal from chosen sources.</p></article>
+          <article class="workflow-step"><span class="workflow-node">02</span><h3>Filter</h3><p>Keep what is relevant and useful.</p></article>
+          <article class="workflow-step"><span class="workflow-node">03</span><h3>AI</h3><p>Find themes and key ideas.</p></article>
+          <article class="workflow-step"><span class="workflow-node">04</span><h3>Rewrite</h3><p>Shape each idea for its audience.</p></article>
+          <article class="workflow-step"><span class="workflow-node">05</span><h3>Multi-platform Output</h3><p>Prepare one idea for many channels.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content-section experiments-section" id="experiments">
+      <div class="section-inner">
+        <div class="content-heading">
+          <div><p class="eyebrow">Small ideas, shipped</p><h2>More Experiments</h2></div>
+          <p class="section-index">A growing collection</p>
+        </div>
+        <div class="experiments-list">
+          <article class="experiment-row" id="experiment-01"><span class="experiment-number">01</span><div class="experiment-copy"><h3>Pomodoro Focus</h3><p>A calmer way to stay with one task.</p></div><a class="experiment-link" href="#experiment-01" aria-label="Pomodoro Focus project link placeholder">View Project ↗</a></article>
+          <article class="experiment-row" id="experiment-02"><span class="experiment-number">02</span><div class="experiment-copy"><h3>Werewords Companion</h3><p>A little help for a lively word game.</p></div><a class="experiment-link" href="#experiment-02" aria-label="Werewords Companion project link placeholder">View Project ↗</a></article>
+          <article class="experiment-row" id="experiment-03"><span class="experiment-number">03</span><div class="experiment-copy"><h3>Fake Painter</h3><p>Playful prompts for a hidden artist.</p></div><a class="experiment-link" href="#experiment-03" aria-label="Fake Painter project link placeholder">View Project ↗</a></article>
+          <article class="experiment-row" id="experiment-04"><span class="experiment-number">04</span><div class="experiment-copy"><h3>Spyfall</h3><p>A quick companion for a game of tells.</p></div><a class="experiment-link" href="#experiment-04" aria-label="Spyfall project link placeholder">View Project ↗</a></article>
+          <article class="experiment-row" id="experiment-05"><span class="experiment-number">05</span><div class="experiment-copy"><h3>Pick One For Me</h3><p>Make the small decisions easier.</p></div><a class="experiment-link" href="#experiment-05" aria-label="Pick One For Me project link placeholder">View Project ↗</a></article>
+          <article class="experiment-row" id="experiment-06"><span class="experiment-number">06</span><div class="experiment-copy"><h3>Cloud Cat</h3><p>A tiny cat drifting through the day.</p></div><a class="experiment-link" href="#experiment-06" aria-label="Cloud Cat project link placeholder">View Project ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content-section work-section" id="how-i-work">
+      <div class="section-inner">
+        <div class="content-heading work-heading">
+          <div><p class="eyebrow">How I Work</p><h2>From idea<br />to shipped.</h2></div>
+          <p class="section-index">A short feedback loop</p>
+        </div>
+        <div class="work-steps" aria-label="Idea to shipping process">
+          <article class="work-step"><span>01</span><h3>Idea</h3></article>
+          <article class="work-step"><span>02</span><h3>Prototype</h3></article>
+          <article class="work-step"><span>03</span><h3>Build</h3></article>
+          <article class="work-step"><span>04</span><h3>Test</h3></article>
+          <article class="work-step"><span>05</span><h3>Ship</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section outro contact-section" id="contact">
       <div class="outro__content">
         <p class="eyebrow">Have an idea?</p>
         <h2>Let's build something.</h2>
-        <div class="links"><a href="mailto:hello@example.com">Email</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a><a href="https://x.com/" target="_blank" rel="noreferrer">X</a></div>
+        <nav class="links" aria-label="Contact and social links"><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:hello@example.com">Email</a><a href="#contact" aria-label="Resume link placeholder">Resume</a><a href="https://x.com/" target="_blank" rel="noreferrer">X</a></nav>
+        <p class="contact-note">Links will be updated soon.</p>
       </div>
     </section>
   </main>
@@ -150,7 +374,32 @@
         gsap.set(['.copy--left', '.copy--right', model, '.project-tags span'], { clearProps: 'all' });
         const fades = gsap.utils.toArray('.copy--left, .showcase__model, .copy--right');
         fades.forEach((item) => gsap.from(item, { scrollTrigger: { trigger: item, start: 'top 88%', once: true }, opacity: 0, y: 24, duration: .65, ease: 'power2.out' }));
-        return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        // matchMedia reverts the mobile animations and their ScrollTriggers on breakpoint changes.
+      });
+
+      gsap.fromTo('.workspace-window', { y: 70, scale: .94, opacity: .35 }, {
+        y: 0, scale: 1, opacity: 1, ease: 'none',
+        scrollTrigger: { trigger: '.workspace-window-wrap', start: 'top 88%', end: 'top 32%', scrub: .8, invalidateOnRefresh: true }
+      });
+      gsap.utils.toArray('.workspace-summary > p').forEach((item, index) => {
+        gsap.fromTo(item, { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: .7, delay: index * .08, ease: 'power2.out',
+          scrollTrigger: { trigger: '.workspace-summary', start: 'top 82%', once: true } });
+      });
+      gsap.fromTo('.workflow-step', { y: 24, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .65, stagger: .13, ease: 'power2.out',
+        scrollTrigger: { trigger: '.workflow', start: 'top 78%', once: true }
+      });
+      gsap.fromTo('.experiment-row', { y: 18, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .6, stagger: .08, ease: 'power2.out',
+        scrollTrigger: { trigger: '.experiments-list', start: 'top 84%', once: true }
+      });
+      gsap.fromTo('.work-step', { y: 20, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .6, stagger: .14, ease: 'power2.out',
+        scrollTrigger: { trigger: '.work-steps', start: 'top 78%', once: true }
+      });
+      gsap.utils.toArray('.content-heading, .intelligence-intro').forEach((item) => {
+        gsap.fromTo(item, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: .75, ease: 'power2.out',
+          scrollTrigger: { trigger: item, start: 'top 87%', once: true } });
       });
 
       if (window.Lenis && window.matchMedia('(min-width: 768px)').matches) {
