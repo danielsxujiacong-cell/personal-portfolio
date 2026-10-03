@@ -68,13 +68,9 @@
     .dashboard-topline span:last-child { white-space: nowrap; }
     .dashboard-greeting { margin-bottom: 8px; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1; letter-spacing: -.06em; font-weight: 500; }
     .dashboard-subtitle { margin-bottom: 28px; color: rgba(255,255,255,.42); font-size: 12px; }
-    .dashboard-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 28px; border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); }
-    .dashboard-stat { padding: 16px 12px 16px 0; }
-    .dashboard-stat + .dashboard-stat { padding-left: 16px; border-left: 1px solid rgba(255,255,255,.1); }
-    .dashboard-stat strong { display: block; margin-bottom: 6px; color: rgba(255,255,255,.92); font-size: 20px; font-weight: 500; letter-spacing: -.04em; }
-    .dashboard-stat span { color: rgba(255,255,255,.38); font-size: 10px; }
     .dashboard-lower { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; }
     .dashboard-label { margin-bottom: 12px; color: rgba(255,255,255,.4); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+    .dashboard-label em { margin-left: 7px; color: rgba(255,255,255,.7); font-style: normal; letter-spacing: .08em; }
     .workspace-project { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.08); }
     .workspace-project-mark { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; color: rgba(255,255,255,.7); font-size: 10px; }
     .workspace-project-copy { min-width: 0; flex: 1; }
@@ -82,9 +78,15 @@
     .workspace-project-copy strong { margin-bottom: 4px; color: rgba(255,255,255,.78); font-size: 10px; font-weight: 500; }
     .workspace-project-copy small { color: rgba(255,255,255,.34); font-size: 9px; }
     .workspace-status { color: rgba(255,255,255,.45); font-size: 9px; white-space: nowrap; }
-    .assistant-panel { min-height: 115px; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 9px; background: rgba(255,255,255,.025); }
+    .assistant-panel { min-height: 145px; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 9px; background: rgba(255,255,255,.025); }
     .assistant-panel p { max-width: 210px; margin: 0; color: rgba(255,255,255,.58); font-size: 10px; line-height: 1.5; }
     .assistant-prompt { display: flex; justify-content: space-between; gap: 10px; padding-top: 9px; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.3); font-size: 9px; }
+    .workspace-capabilities { margin: 28px 0 0; color: rgba(255,255,255,.55); font-size: 11px; line-height: 1.8; }
+    .workspace-capabilities strong { display: block; margin-bottom: 5px; color: rgba(255,255,255,.35); font-size: 9px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+    .workspace-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
+    .workspace-actions a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px 11px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: rgba(255,255,255,.76); font-size: 10px; transition: color .25s, border-color .25s, background .25s; }
+    .workspace-actions a:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.06); color: #fff; }
+    .workspace-actions a:focus-visible { outline: 2px solid rgba(255,255,255,.85); outline-offset: 3px; }
     .intelligence-section { background: #101010; }
     .intelligence-intro { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 70px; }
     .intelligence-intro h2 { max-width: 750px; margin: 0; font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: .92; letter-spacing: -.075em; font-weight: 500; }
@@ -145,11 +147,10 @@
       .dashboard-main { padding: 22px 16px; }
       .dashboard-topline { font-size: 8px; }
       .dashboard-greeting { font-size: 1.8rem; }
-      .dashboard-stats { margin-bottom: 21px; }
-      .dashboard-stat strong { font-size: 17px; }
-      .dashboard-stat span { font-size: 8px; }
       .dashboard-lower { grid-template-columns: 1fr; gap: 20px; }
-      .assistant-panel { min-height: 100px; }
+      .assistant-panel { min-height: 120px; }
+      .workspace-actions { gap: 8px; }
+      .workspace-actions a { padding: 10px 12px 11px; font-size: 9px; }
       .intelligence-intro p { margin-top: 20px; }
       .workflow { grid-template-columns: 1fr; gap: 26px; padding-left: 2px; }
       .workflow::before { top: 18px; bottom: 18px; left: 18px; right: auto; width: 1px; height: auto; }
@@ -228,45 +229,46 @@
           <p><strong>Solution</strong>A single personal AI Workspace that brings the work and its context together.</p>
         </div>
         <div class="workspace-window-wrap">
-          <div class="workspace-window" aria-label="Daniel Workspace dashboard mockup">
+          <div class="workspace-window" aria-label="Illustrative Daniel Workspace interface preview">
             <div class="window-bar" aria-hidden="true">
               <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
-              <span class="window-address">workspace.local</span>
+              <span class="window-address">Daniel Workspace · V2.5</span>
             </div>
             <div class="dashboard">
               <aside class="dashboard-sidebar" aria-label="Workspace sections">
                 <p class="dashboard-brand">Daniel Workspace</p>
                 <nav class="dashboard-nav">
-                  <span><i class="nav-glyph" aria-hidden="true">⌂</i>Projects</span>
+                  <span><i class="nav-glyph" aria-hidden="true">⌂</i>Home</span>
+                  <span><i class="nav-glyph" aria-hidden="true">▦</i>Projects</span>
                   <span><i class="nav-glyph" aria-hidden="true">✓</i>Tasks</span>
                   <span><i class="nav-glyph" aria-hidden="true">⌕</i>Knowledge</span>
                   <span><i class="nav-glyph" aria-hidden="true">◇</i>Decisions</span>
-                  <span><i class="nav-glyph" aria-hidden="true">✳</i>AI Assistant</span>
                 </nav>
               </aside>
               <div class="dashboard-main">
-                <div class="dashboard-topline"><span>PERSONAL WORKSPACE</span><span>MONDAY, 9:41 AM</span></div>
-                <h3 class="dashboard-greeting">Good morning, Daniel.</h3>
-                <p class="dashboard-subtitle">Your projects and next steps, in one place.</p>
-                <div class="dashboard-stats" aria-label="Workspace overview">
-                  <div class="dashboard-stat"><strong>04</strong><span>Active projects</span></div>
-                  <div class="dashboard-stat"><strong>12</strong><span>Open tasks</span></div>
-                  <div class="dashboard-stat"><strong>03</strong><span>Recent decisions</span></div>
-                </div>
+                <div class="dashboard-topline"><span>WORKSPACE OVERVIEW</span><span>LOCAL-FIRST · V2.5</span></div>
+                <h3 class="dashboard-greeting">Your work, in context.</h3>
+                <p class="dashboard-subtitle">Projects, tasks, knowledge and decisions in one place.</p>
                 <div class="dashboard-lower">
                   <div>
-                    <p class="dashboard-label">Continue where you left off</p>
-                    <div class="workspace-project"><span class="workspace-project-mark">DW</span><span class="workspace-project-copy"><strong>Personal AI Workspace</strong><small>Updated project context · 2h ago</small></span><span class="workspace-status">In progress</span></div>
-                    <div class="workspace-project"><span class="workspace-project-mark">CI</span><span class="workspace-project-copy"><strong>Content Intelligence</strong><small>Review workflow draft · Today</small></span><span class="workspace-status">Next up</span></div>
+                    <p class="dashboard-label">Workspace context</p>
+                    <div class="workspace-project"><span class="workspace-project-mark" aria-hidden="true">↗</span><span class="workspace-project-copy"><strong>Projects &amp; GitHub status</strong><small>Public repository metadata · local read-only scan</small></span></div>
+                    <div class="workspace-project"><span class="workspace-project-mark" aria-hidden="true">▤</span><span class="workspace-project-copy"><strong>Tasks, Knowledge &amp; Decisions</strong><small>Saved in this browser’s local storage</small></span></div>
+                    <div class="workspace-project"><span class="workspace-project-mark" aria-hidden="true">◐</span><span class="workspace-project-copy"><strong>Appearance</strong><small>Light / Dark mode</small></span></div>
                   </div>
                   <div>
-                    <p class="dashboard-label">AI Assistant</p>
-                    <div class="assistant-panel"><p>“Summarize what changed across my active projects this week.”</p><div class="assistant-prompt"><span>Ask with your workspace context</span><span>↗</span></div></div>
+                    <p class="dashboard-label">AI Assistant <em>Mock</em></p>
+                    <div class="assistant-panel"><p>Page-aware responses using the current workspace context.</p><div class="assistant-prompt"><span>Local Mock provider · no network AI</span><span>↗</span></div></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <p class="workspace-capabilities"><strong>Capabilities</strong>Projects · Tasks · Knowledge · Decisions · AI Assistant · GitHub status · Light / Dark mode</p>
+        <div class="workspace-actions" aria-label="Daniel Workspace project links">
+          <a href="https://danielsxujiacong-cell.github.io/daniel-workspace/" target="_blank" rel="noopener noreferrer">View Live <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/danielsxujiacong-cell/daniel-workspace" target="_blank" rel="noopener noreferrer">View Project / GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
