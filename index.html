@@ -99,12 +99,20 @@
     .workflow-step p { max-width: 170px; margin: 0; color: rgba(255,255,255,.37); font-size: 10px; line-height: 1.5; }
     .experiments-section { padding-top: clamp(100px, 12vw, 170px); padding-bottom: clamp(100px, 12vw, 170px); }
     .experiments-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 7vw; border-top: 1px solid rgba(255,255,255,.14); }
-    .experiment-row { min-width: 0; display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 105px; border-bottom: 1px solid rgba(255,255,255,.12); transition: padding .25s ease, border-color .25s ease; }
-    .experiment-row:hover { padding: 0 7px; border-color: rgba(255,255,255,.38); }
+    .experiment-row { min-width: 0; display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 112px; border-bottom: 1px solid rgba(255,255,255,.12); transition: border-color .25s ease; }
+    .experiment-row:hover, .experiment-row:focus-within { border-color: rgba(255,255,255,.38); }
     .experiment-number { color: rgba(255,255,255,.3); font-size: 9px; }
-    .experiment-copy h3 { margin: 0 0 5px; font-size: 16px; font-weight: 500; letter-spacing: -.03em; }
-    .experiment-copy p { margin: 0; color: rgba(255,255,255,.4); font-size: 10px; }
-    .experiment-link { color: rgba(255,255,255,.47); font-size: 10px; white-space: nowrap; }
+    .experiment-copy h3 { margin: 0 0 5px; font-size: 16px; font-weight: 500; letter-spacing: -.03em; transition: color .25s ease, transform .25s ease; }
+    .experiment-copy p { margin: 0; color: rgba(255,255,255,.4); font-size: 10px; line-height: 1.55; }
+    .experiment-row:hover .experiment-copy h3, .experiment-row:focus-within .experiment-copy h3 { color: rgba(255,255,255,.96); transform: translateX(3px); }
+    .experiment-actions { display: flex; align-items: center; gap: 4px; }
+    .experiment-link { min-height: 44px; display: inline-flex; align-items: center; gap: 5px; padding: 0 7px; color: rgba(255,255,255,.47); font-size: 10px; white-space: nowrap; transition: color .25s ease; }
+    .experiment-link:hover, .experiment-link:focus-visible { color: rgba(255,255,255,.96); }
+    .experiment-link-arrow { opacity: 0; transform: translate(-3px, 3px); transition: opacity .25s ease, transform .25s ease; }
+    .experiment-link:hover .experiment-link-arrow, .experiment-link:focus-visible .experiment-link-arrow, .experiment-row:focus-within .experiment-link-arrow { opacity: 1; transform: translate(0, 0); }
+    @media (min-width: 768px) and (max-width: 920px) {
+      .experiments-list { grid-template-columns: 1fr; }
+    }
     .work-section { padding-top: clamp(100px, 12vw, 170px); padding-bottom: clamp(110px, 14vw, 200px); background: #101010; }
     .work-heading { margin-bottom: 76px; }
     .work-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.17); }
@@ -159,10 +167,11 @@
       .workflow-step h3 { align-self: end; margin: 1px 0 5px; }
       .workflow-step p { max-width: none; }
       .experiments-list { grid-template-columns: 1fr; }
-      .experiment-row { min-height: 88px; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 9px; }
+      .experiment-row { min-height: 0; grid-template-columns: 22px minmax(0, 1fr); align-items: start; gap: 5px 9px; padding: 17px 0; }
       .experiment-copy h3 { font-size: 15px; }
-      .experiment-copy p { font-size: 9px; }
-      .experiment-link { font-size: 9px; }
+      .experiment-copy p { font-size: 10px; }
+      .experiment-actions { grid-column: 2; flex-wrap: wrap; gap: 2px; margin-top: 1px; }
+      .experiment-link { min-height: 44px; padding: 0 9px; font-size: 10px; }
       .work-heading { margin-bottom: 42px; }
       .work-steps { grid-template-columns: 1fr; border-top: 0; }
       .work-step { min-height: 78px; display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 10px; padding: 0; border-right: 0; border-top: 1px solid rgba(255,255,255,.14); }
@@ -299,12 +308,54 @@
           <p class="section-index">A growing collection</p>
         </div>
         <div class="experiments-list">
-          <article class="experiment-row" id="experiment-01"><span class="experiment-number">01</span><div class="experiment-copy"><h3>Pomodoro Focus</h3><p>A calmer way to stay with one task.</p></div><a class="experiment-link" href="#experiment-01" aria-label="Pomodoro Focus project link placeholder">View Project ↗</a></article>
-          <article class="experiment-row" id="experiment-02"><span class="experiment-number">02</span><div class="experiment-copy"><h3>Werewords Companion</h3><p>A little help for a lively word game.</p></div><a class="experiment-link" href="#experiment-02" aria-label="Werewords Companion project link placeholder">View Project ↗</a></article>
-          <article class="experiment-row" id="experiment-03"><span class="experiment-number">03</span><div class="experiment-copy"><h3>Fake Painter</h3><p>Playful prompts for a hidden artist.</p></div><a class="experiment-link" href="#experiment-03" aria-label="Fake Painter project link placeholder">View Project ↗</a></article>
-          <article class="experiment-row" id="experiment-04"><span class="experiment-number">04</span><div class="experiment-copy"><h3>Spyfall</h3><p>A quick companion for a game of tells.</p></div><a class="experiment-link" href="#experiment-04" aria-label="Spyfall project link placeholder">View Project ↗</a></article>
-          <article class="experiment-row" id="experiment-05"><span class="experiment-number">05</span><div class="experiment-copy"><h3>Pick One For Me</h3><p>Make the small decisions easier.</p></div><a class="experiment-link" href="#experiment-05" aria-label="Pick One For Me project link placeholder">View Project ↗</a></article>
-          <article class="experiment-row" id="experiment-06"><span class="experiment-number">06</span><div class="experiment-copy"><h3>Cloud Cat</h3><p>A tiny cat drifting through the day.</p></div><a class="experiment-link" href="#experiment-06" aria-label="Cloud Cat project link placeholder">View Project ↗</a></article>
+          <article class="experiment-row" id="experiment-01">
+            <span class="experiment-number">01</span>
+            <div class="experiment-copy"><h3>Pomodoro Focus</h3><p>A Pomodoro timer with tasks, session stats, ambient sound and optional cloud sync.</p></div>
+            <div class="experiment-actions">
+              <a class="experiment-link" href="https://danielsxujiacong-cell.github.io/pomodoro-focus/" target="_blank" rel="noopener noreferrer" aria-label="View Pomodoro Focus live"><span>View Live</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+              <a class="experiment-link" href="https://github.com/danielsxujiacong-cell/pomodoro-focus" target="_blank" rel="noopener noreferrer" aria-label="View Pomodoro Focus on GitHub"><span>GitHub</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="experiment-row" id="experiment-02">
+            <span class="experiment-number">02</span>
+            <div class="experiment-copy"><h3>Werewords Companion</h3><p>A pass-around Werewords helper with a day timer, secret-word peeks and settlement timer.</p></div>
+            <div class="experiment-actions">
+              <a class="experiment-link" href="https://danielsxujiacong-cell.github.io/werewords-companion/" target="_blank" rel="noopener noreferrer" aria-label="View Werewords Companion live"><span>View Live</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+              <a class="experiment-link" href="https://github.com/danielsxujiacong-cell/werewords-companion" target="_blank" rel="noopener noreferrer" aria-label="View Werewords Companion on GitHub"><span>GitHub</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="experiment-row" id="experiment-03">
+            <span class="experiment-number">03</span>
+            <div class="experiment-copy"><h3>Fake Painter</h3><p>A party-game helper for drawing prompts, hidden scoring criteria and round settlement.</p></div>
+            <div class="experiment-actions">
+              <a class="experiment-link" href="https://danielsxujiacong-cell.github.io/fake-painter/" target="_blank" rel="noopener noreferrer" aria-label="View Fake Painter live"><span>View Live</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+              <a class="experiment-link" href="https://github.com/danielsxujiacong-cell/fake-painter" target="_blank" rel="noopener noreferrer" aria-label="View Fake Painter on GitHub"><span>GitHub</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="experiment-row" id="experiment-04">
+            <span class="experiment-number">04</span>
+            <div class="experiment-copy"><h3>Spyfall</h3><p>A pass-the-phone Spyfall game with hidden roles, locations and an 8-minute round timer.</p></div>
+            <div class="experiment-actions">
+              <a class="experiment-link" href="https://danielsxujiacong-cell.github.io/spyfall/" target="_blank" rel="noopener noreferrer" aria-label="View Spyfall live"><span>View Live</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+              <a class="experiment-link" href="https://github.com/danielsxujiacong-cell/spyfall" target="_blank" rel="noopener noreferrer" aria-label="View Spyfall on GitHub"><span>GitHub</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="experiment-row" id="experiment-05">
+            <span class="experiment-number">05</span>
+            <div class="experiment-copy"><h3>Pick One For Me</h3><p>Choose from your own options, pick a meal or draw a random number.</p></div>
+            <div class="experiment-actions">
+              <a class="experiment-link" href="https://danielsxujiacong-cell.github.io/pick-one-for-me/" target="_blank" rel="noopener noreferrer" aria-label="View Pick One For Me live"><span>View Live</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+              <a class="experiment-link" href="https://github.com/danielsxujiacong-cell/pick-one-for-me" target="_blank" rel="noopener noreferrer" aria-label="View Pick One For Me on GitHub"><span>GitHub</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="experiment-row" id="experiment-06">
+            <span class="experiment-number">06</span>
+            <div class="experiment-copy"><h3>Cloud Cat</h3><p>A shared virtual cat where visitors feed Lanlan and update cloud-synced records.</p></div>
+            <div class="experiment-actions">
+              <a class="experiment-link" href="https://danielsxujiacong-cell.github.io/lanlan-cloud-pet/" target="_blank" rel="noopener noreferrer" aria-label="View Cloud Cat live"><span>View Live</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+              <a class="experiment-link" href="https://github.com/danielsxujiacong-cell/lanlan-cloud-pet" target="_blank" rel="noopener noreferrer" aria-label="View Cloud Cat on GitHub"><span>GitHub</span><span class="experiment-link-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
