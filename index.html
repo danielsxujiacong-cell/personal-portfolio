@@ -23,54 +23,37 @@
     .intro h1, .outro h2 { margin-bottom: 22px; font-size: clamp(3.5rem, 10vw, 9.5rem); line-height: .9; letter-spacing: -.075em; font-weight: 600; }
     .intro__sub { margin: 0; color: #b7b7b2; font-size: clamp(1.1rem, 2vw, 1.7rem); letter-spacing: -.02em; }
     .scroll-cue { position: absolute; bottom: 34px; left: 50%; color: var(--muted); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; transform: translateX(-50%); }
-    .showcase { height: 200vh; }
-    .showcase__pin { height: 100vh; position: relative; display: grid; place-items: center; overflow: hidden; isolation: isolate; padding: 0 5vw; }
-    .showcase__pin::before { content: ""; position: absolute; inset: 12% 18%; z-index: -1; background: radial-gradient(ellipse at center, rgba(52,105,214,.16), rgba(26,57,112,.06) 42%, transparent 72%); pointer-events: none; }
-    .showcase__browser { position: relative; z-index: 1; width: min(55vw, 920px); overflow: hidden; border: 1px solid rgba(211,225,255,.2); border-radius: 15px; background: #0b0e14; box-shadow: 0 34px 100px rgba(0,0,0,.62), 0 0 58px rgba(45,91,181,.12), 0 1px 0 rgba(255,255,255,.06) inset; transform-origin: center; will-change: transform, opacity; }
-    .browser-chrome { position: relative; height: 42px; display: flex; align-items: center; gap: 7px; padding: 0 15px; border-bottom: 1px solid rgba(255,255,255,.08); background: #11151d; }
-    .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.2); }
-    .browser-address { position: absolute; left: 50%; width: min(48%, 320px); overflow: hidden; padding: 6px 12px; border: 1px solid rgba(255,255,255,.07); border-radius: 6px; color: rgba(255,255,255,.34); font-size: 9px; text-align: center; text-overflow: ellipsis; white-space: nowrap; transform: translateX(-50%); }
-    .browser-lock { margin-left: auto; color: rgba(255,255,255,.35); font-size: 10px; }
-    .product-shell { min-height: 430px; display: grid; grid-template-columns: 166px minmax(0, 1fr); }
-    .product-sidebar { display: flex; flex-direction: column; padding: 20px 12px 15px; border-right: 1px solid rgba(255,255,255,.07); background: #0d1119; }
-    .product-brand { display: flex; align-items: center; gap: 9px; margin: 0 6px 26px; color: rgba(255,255,255,.88); font-size: 10px; font-weight: 600; letter-spacing: .03em; }
-    .product-brand-mark { width: 22px; height: 22px; display: grid; place-items: center; border: 1px solid rgba(104,154,255,.38); border-radius: 7px; background: linear-gradient(145deg, rgba(74,125,225,.28), rgba(51,75,124,.12)); color: #9cbaff; font-size: 11px; }
-    .product-nav-label { margin: 0 8px 8px; color: rgba(255,255,255,.27); font-size: 8px; letter-spacing: .14em; text-transform: uppercase; }
-    .product-nav { display: grid; gap: 4px; }
-    .product-nav span { display: flex; align-items: center; gap: 9px; min-height: 31px; padding: 0 8px; border-radius: 6px; color: rgba(255,255,255,.43); font-size: 9px; }
-    .product-nav span:first-child { border: 1px solid rgba(104,154,255,.12); background: rgba(77,124,218,.12); color: rgba(226,236,255,.88); }
-    .product-nav-glyph { width: 12px; color: rgba(173,194,236,.6); font-size: 10px; text-align: center; }
-    .product-review-state { display: flex; align-items: center; gap: 7px; margin: auto 5px 0; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.07); color: rgba(255,255,255,.4); font-size: 8px; }
-    .product-review-state i { width: 6px; height: 6px; border-radius: 50%; background: #77a1ff; box-shadow: 0 0 10px rgba(89,143,255,.65); }
-    .product-main { min-width: 0; padding: clamp(20px, 2.6vw, 34px); }
-    .product-topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 24px; color: rgba(255,255,255,.35); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
-    .concept-badge { padding: 5px 8px; border: 1px solid rgba(109,150,230,.23); border-radius: 999px; color: rgba(165,193,255,.78); font-size: 7px; letter-spacing: .1em; white-space: nowrap; }
-    .product-heading-row { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 22px; }
-    .product-heading { margin: 0 0 7px; font-size: clamp(1.3rem, 2.2vw, 1.85rem); line-height: 1.05; letter-spacing: -.055em; font-weight: 500; }
-    .product-description { max-width: 400px; margin: 0; color: rgba(255,255,255,.42); font-size: 9px; line-height: 1.55; }
-    .product-button { flex: 0 0 auto; padding: 8px 10px; border: 1px solid rgba(124,161,235,.3); border-radius: 6px; background: rgba(70,116,205,.16); color: rgba(225,235,255,.84); font-size: 8px; }
-    .product-panels { display: grid; grid-template-columns: 1.04fr .96fr; gap: 11px; }
-    .product-panel { min-width: 0; padding: 12px; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012)); }
-    .product-panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; color: rgba(255,255,255,.66); font-size: 8px; font-weight: 500; }
-    .product-panel-heading small { color: rgba(255,255,255,.32); font-size: 7px; font-weight: 400; }
-    .source-row { display: flex; align-items: center; gap: 8px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,.06); }
-    .source-mark { width: 23px; height: 23px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.09); border-radius: 6px; color: rgba(175,195,233,.68); font-size: 9px; }
-    .source-copy { min-width: 0; }
-    .source-copy strong, .source-copy small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .source-copy strong { margin-bottom: 3px; color: rgba(255,255,255,.68); font-size: 8px; font-weight: 400; }
-    .source-copy small { color: rgba(255,255,255,.3); font-size: 7px; }
-    .synthesis-note { margin: 0 0 10px; color: rgba(255,255,255,.4); font-size: 8px; line-height: 1.5; }
-    .theme-item { display: flex; align-items: flex-start; gap: 7px; padding: 7px 0; border-top: 1px solid rgba(255,255,255,.06); color: rgba(255,255,255,.6); font-size: 8px; line-height: 1.4; }
-    .theme-item i { width: 5px; height: 5px; flex: 0 0 auto; margin-top: 3px; border-radius: 50%; background: #79a4ff; }
-    .product-handoff { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; margin-top: 11px; }
-    .handoff-step { min-width: 0; padding: 8px 9px; border: 1px solid rgba(255,255,255,.065); border-radius: 6px; color: rgba(255,255,255,.56); font-size: 7px; }
-    .handoff-step span { display: block; margin-bottom: 4px; color: rgba(255,255,255,.27); font-size: 6px; letter-spacing: .1em; }
-    .product-footnote { margin: 10px 0 0; color: rgba(255,255,255,.27); font-size: 7px; }
-    .copy { position: absolute; z-index: 2; top: 50%; width: min(16vw, 215px); transform: translateY(-50%); opacity: 1; will-change: transform, opacity; }
-    .copy--left { left: 4vw; } .copy--right { right: 4vw; text-align: right; }
-    .copy .eyebrow { margin-bottom: 15px; font-size: 9px; }
-    .copy h2 { margin-bottom: 14px; font-size: clamp(1.65rem, 3vw, 3rem); line-height: .98; letter-spacing: -.06em; font-weight: 500; }
-    .copy p:not(.eyebrow) { color: var(--muted); font-size: clamp(.8rem, 1vw, .95rem); line-height: 1.55; }
+    .showcase { position: relative; overflow: hidden; padding: clamp(104px, 12vw, 170px) 7vw clamp(112px, 14vw, 190px); border-top: 1px solid rgba(255,255,255,.08); }
+    .showcase::before { content: ""; position: absolute; top: 2%; right: -10%; width: min(70vw, 900px); height: 720px; background: radial-gradient(ellipse, rgba(42,91,184,.13), rgba(30,58,110,.045) 42%, transparent 72%); pointer-events: none; }
+    .showcase__inner { position: relative; z-index: 1; width: min(100%, 1320px); margin: 0 auto; }
+    .showcase__heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: clamp(54px, 8vw, 112px); }
+    .showcase__heading h2 { max-width: 780px; margin: 0; font-size: clamp(2.8rem, 7.2vw, 6.7rem); line-height: .92; letter-spacing: -.075em; font-weight: 500; }
+    .showcase__heading-copy { max-width: 260px; margin: 0 0 8px; color: rgba(255,255,255,.45); font-size: 12px; line-height: 1.65; }
+    .showcase-projects { display: grid; gap: clamp(112px, 16vw, 220px); }
+    .feature-project { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(290px, .6fr); align-items: center; gap: clamp(36px, 7vw, 98px); }
+    .feature-project:nth-child(even) { grid-template-columns: minmax(290px, .6fr) minmax(0, 1.4fr); }
+    .feature-project:nth-child(even) .feature-project__window { grid-column: 2; grid-row: 1; }
+    .feature-project:nth-child(even) .feature-project__copy { grid-column: 1; grid-row: 1; }
+    .feature-project__window { display: block; min-width: 0; overflow: hidden; border: 1px solid rgba(211,225,255,.19); border-radius: 16px; background: #0b0e14; box-shadow: 0 32px 92px rgba(0,0,0,.58), 0 0 54px rgba(45,91,181,.1), 0 1px 0 rgba(255,255,255,.06) inset; transition: transform .45s cubic-bezier(.2,.7,.3,1), border-color .35s ease, box-shadow .35s ease; }
+    .feature-project__window:hover { transform: translateY(-7px); border-color: rgba(151,183,246,.42); box-shadow: 0 42px 105px rgba(0,0,0,.62), 0 0 68px rgba(54,104,207,.17), 0 1px 0 rgba(255,255,255,.08) inset; }
+    .feature-project__window:focus-visible, .feature-project__open:focus-visible { outline: 2px solid rgba(158,190,255,.85); outline-offset: 5px; }
+    .feature-project__browser-bar { position: relative; height: 43px; display: flex; align-items: center; gap: 7px; padding: 0 15px; border-bottom: 1px solid rgba(255,255,255,.08); background: #11151d; }
+    .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.22); }
+    .feature-project__address { position: absolute; left: 50%; width: min(52%, 390px); overflow: hidden; padding: 6px 12px; border: 1px solid rgba(255,255,255,.07); border-radius: 6px; color: rgba(255,255,255,.38); font-size: 9px; text-align: center; text-overflow: ellipsis; white-space: nowrap; transform: translateX(-50%); }
+    .feature-project__browser-state { margin-left: auto; color: rgba(255,255,255,.34); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+    .feature-project__image { display: block; width: 100%; height: auto; background: #f7f7f5; }
+    .feature-project__copy { max-width: 440px; }
+    .project-index { margin: 0 0 20px; color: rgba(160,190,248,.72); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+    .feature-project__copy h3 { margin: 0 0 19px; font-size: clamp(2.2rem, 4vw, 4.1rem); line-height: .98; letter-spacing: -.065em; font-weight: 500; }
+    .feature-project__stack { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 22px; }
+    .stack-pill { padding: 6px 9px; border: 1px solid rgba(255,255,255,.11); border-radius: 999px; color: rgba(255,255,255,.61); font-size: 9px; letter-spacing: .02em; }
+    .feature-project__description { margin: 0; color: rgba(255,255,255,.58); font-size: clamp(.92rem, 1.25vw, 1.08rem); line-height: 1.65; }
+    .feature-project__capabilities { display: grid; gap: 11px; margin: 23px 0 0; padding: 0; list-style: none; }
+    .feature-project__capabilities li { display: flex; align-items: flex-start; gap: 11px; color: rgba(255,255,255,.73); font-size: 12px; line-height: 1.5; }
+    .feature-project__capabilities li::before { content: ""; width: 5px; height: 5px; flex: 0 0 auto; margin-top: 6px; border-radius: 50%; background: #83aaff; box-shadow: 0 0 12px rgba(92,144,255,.4); }
+    .feature-project__note { display: block; margin-top: 19px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.39); font-size: 10px; line-height: 1.55; }
+    .feature-project__open { display: inline-flex; align-items: center; gap: 9px; margin-top: 23px; padding: 10px 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: rgba(255,255,255,.84); font-size: 11px; transition: border-color .25s ease, background .25s ease, color .25s ease, transform .25s ease; }
+    .feature-project__open:hover { transform: translateY(-2px); border-color: rgba(149,181,243,.53); background: rgba(58,98,173,.13); color: #fff; }
     .outro__content { width: 100%; text-align: center; }
     .links { display: flex; justify-content: center; align-items: center; gap: 8px 30px; color: var(--muted); font-size: 13px; }
     .links a { min-height: 44px; display: inline-flex; align-items: center; gap: 5px; padding: 0 2px; transition: color .25s, border-color .25s, opacity .25s, transform .25s; }
@@ -164,42 +147,31 @@
     .contact-subtitle { margin: 0 auto 28px; color: rgba(255,255,255,.48); font-size: clamp(1rem, 1.4vw, 1.15rem); line-height: 1.5; letter-spacing: -.015em; }
     .site-footer { padding: 0 8vw 26px; color: rgba(255,255,255,.42); text-align: center; font-size: 11px; letter-spacing: .03em; }
     @media (max-width: 1023px) {
-      .showcase { height: auto; padding: clamp(90px, 12vw, 150px) 0; }
-      .showcase__pin { height: auto; min-height: 0; display: flex; flex-direction: column; gap: 34px; overflow: visible; padding: 0 6vw; }
-      .showcase__browser { width: min(100%, 760px); }
-      .copy, .copy--left, .copy--right { position: relative; inset: auto; top: auto; right: auto; left: auto; width: min(100%, 620px); transform: none; }
-      .copy--left { order: 1; }
-      .showcase__browser { order: 2; }
-      .copy--right { order: 3; }
-      .product-shell { min-height: 0; }
-      .product-main { padding: clamp(20px, 4vw, 34px); }
+      .showcase { padding: clamp(90px, 12vw, 150px) 6vw clamp(100px, 13vw, 160px); }
+      .showcase__heading { align-items: start; flex-direction: column; gap: 18px; }
+      .showcase__heading-copy { max-width: 520px; }
+      .showcase-projects { gap: clamp(88px, 12vw, 130px); }
+      .feature-project, .feature-project:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 27px; }
+      .feature-project:nth-child(even) .feature-project__window, .feature-project:nth-child(even) .feature-project__copy { grid-column: auto; grid-row: auto; }
+      .feature-project__copy { max-width: 660px; }
     }
     @media (max-width: 767px) {
-      .showcase { padding: 14vh 0 16vh; }
-      .showcase__pin { gap: 28px; padding: 0 7vw; }
-      .copy, .copy--left, .copy--right { width: 100%; text-align: center; }
-      .copy h2 { max-width: 440px; margin-right: auto; margin-left: auto; font-size: clamp(2rem, 9vw, 3.2rem); }
-      .copy .eyebrow { margin-bottom: 12px; }
-      .copy p:not(.eyebrow) { max-width: 390px; margin-right: auto; margin-left: auto; }
-      .showcase__browser { border-radius: 11px; }
-      .browser-chrome { height: 36px; padding: 0 10px; }
-      .browser-address { font-size: 8px; }
-      .product-shell { display: block; }
-      .product-sidebar { display: grid; grid-template-columns: 1fr; gap: 11px; padding: 12px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.07); }
-      .product-brand { margin: 0 2px; }
-      .product-nav-label, .product-review-state { display: none; }
-      .product-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; }
-      .product-nav span { min-height: 28px; padding: 0 6px; font-size: 8px; }
-      .product-main { padding: 18px 13px 14px; }
-      .product-topline { margin-bottom: 18px; font-size: 7px; }
-      .concept-badge { padding: 4px 6px; font-size: 6px; }
-      .product-heading-row { align-items: start; margin-bottom: 17px; }
-      .product-heading { font-size: clamp(1.3rem, 6vw, 1.7rem); }
-      .product-description { font-size: 8px; }
-      .product-button { padding: 7px; font-size: 7px; }
-      .product-panels { grid-template-columns: 1fr; gap: 8px; }
-      .product-handoff { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .product-footnote { line-height: 1.5; }
+      .showcase { padding: 14vh 7vw 16vh; }
+      .showcase__heading { margin-bottom: 56px; }
+      .showcase__heading h2 { font-size: clamp(2.8rem, 13vw, 4.7rem); }
+      .showcase__heading-copy { font-size: 11px; }
+      .showcase-projects { gap: 86px; }
+      .feature-project { gap: 23px; }
+      .feature-project__window { border-radius: 11px; }
+      .feature-project__browser-bar { height: 36px; padding: 0 10px; }
+      .feature-project__address { width: min(64%, 300px); padding: 5px 8px; font-size: 8px; }
+      .feature-project__browser-state { font-size: 7px; }
+      .feature-project__copy h3 { font-size: clamp(2rem, 9vw, 3.25rem); }
+      .feature-project__stack { margin-bottom: 17px; }
+      .feature-project__description { font-size: 14px; }
+      .feature-project__capabilities { gap: 9px; margin-top: 18px; }
+      .feature-project__capabilities li { font-size: 11px; }
+      .feature-project__open { margin-top: 20px; }
       .content-section { padding-right: 7vw; padding-left: 7vw; }
       .content-heading, .intelligence-intro { display: block; margin-bottom: 38px; }
       .content-heading h2, .intelligence-intro h2 { font-size: clamp(2.8rem, 13vw, 4.7rem); }
@@ -244,6 +216,9 @@
       .contact-subtitle { margin-bottom: 24px; }
       .links { flex-wrap: wrap; column-gap: 24px; row-gap: 4px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .feature-project__window, .feature-project__open { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -259,70 +234,85 @@
       <div class="scroll-cue">Scroll to explore ↓</div>
     </section>
 
-    <section class="section showcase" id="showcase">
-      <div class="showcase__pin">
-        <div class="copy copy--left">
-          <p class="eyebrow">Built for context</p>
-          <h2>Make complex work feel clear.</h2>
-          <p>Bring source material, systems and people into one thoughtful workflow.</p>
-        </div>
-
-        <div class="showcase__browser" role="img" aria-label="Illustrative enterprise AI interface concept showing source material, AI-assisted synthesis, and human review. Example content only; no business metrics or live data are shown.">
-          <div class="browser-chrome" aria-hidden="true">
-            <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
-            <span class="browser-address">workspace / research / new brief</span><span class="browser-lock">◈</span>
+    <section class="section showcase" id="showcase" aria-labelledby="showcase-title">
+      <div class="showcase__inner">
+        <header class="showcase__heading">
+          <div>
+            <p class="eyebrow">Selected work · FlowOps AI</p>
+            <h2 id="showcase-title">Three systems<br />for better decisions.</h2>
           </div>
-          <div class="product-shell">
-            <aside class="product-sidebar" aria-hidden="true">
-              <p class="product-brand"><span class="product-brand-mark">✳</span>AI WORKSPACE</p>
-              <p class="product-nav-label">Research</p>
-              <nav class="product-nav">
-                <span><i class="product-nav-glyph">▤</i>Source library</span>
-                <span><i class="product-nav-glyph">⌘</i>Theme review</span>
-                <span><i class="product-nav-glyph">▧</i>Brief builder</span>
-                <span><i class="product-nav-glyph">✓</i>Approvals</span>
-              </nav>
-              <div class="product-review-state"><i></i>Human review enabled</div>
-            </aside>
-            <div class="product-main">
-              <div class="product-topline"><span>Research workspace</span><span class="concept-badge">INTERFACE CONCEPT</span></div>
-              <div class="product-heading-row">
-                <div>
-                  <h3 class="product-heading">From evidence to clarity.</h3>
-                  <p class="product-description">Bring selected material together, review emerging themes, and shape a useful brief.</p>
-                </div>
-                <span class="product-button">＋ &nbsp;New brief</span>
+          <p class="showcase__heading-copy">把企业知识、审批流程与日常运营信息放进清晰可追溯的工作链路。</p>
+        </header>
+
+        <div class="showcase-projects">
+          <article class="feature-project">
+            <a class="feature-project__window" href="https://hub.danielxu.cn/flowops/knowledge" target="_blank" rel="noopener noreferrer" aria-label="打开企业 AI 知识库助手">
+              <div class="feature-project__browser-bar" aria-hidden="true">
+                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+                <span class="feature-project__address">hub.danielxu.cn/flowops/knowledge</span><span class="feature-project__browser-state">Knowledge</span>
               </div>
-              <div class="product-panels">
-                <section class="product-panel" aria-hidden="true">
-                  <h4 class="product-panel-heading">Source material <small>EXAMPLE INPUTS</small></h4>
-                  <div class="source-row"><span class="source-mark">▤</span><span class="source-copy"><strong>Interview notes</strong><small>Research material</small></span></div>
-                  <div class="source-row"><span class="source-mark">▧</span><span class="source-copy"><strong>Product documentation</strong><small>Reference material</small></span></div>
-                  <div class="source-row"><span class="source-mark">◫</span><span class="source-copy"><strong>Support themes</strong><small>Customer feedback</small></span></div>
-                </section>
-                <section class="product-panel" aria-hidden="true">
-                  <h4 class="product-panel-heading">Synthesis preview <small>HUMAN REVIEW</small></h4>
-                  <p class="synthesis-note">AI helps surface patterns for a person to check against the source.</p>
-                  <div class="theme-item"><i></i>Recurring workflow friction</div>
-                  <div class="theme-item"><i></i>Questions worth resolving</div>
-                  <div class="theme-item"><i></i>Open product decisions</div>
-                </section>
-              </div>
-              <div class="product-handoff" aria-hidden="true">
-                <div class="handoff-step"><span>01 / INPUT</span>Gather sources</div>
-                <div class="handoff-step"><span>02 / ASSIST</span>Surface themes</div>
-                <div class="handoff-step"><span>03 / REVIEW</span>Check evidence</div>
-                <div class="handoff-step"><span>04 / OUTPUT</span>Shape a brief</div>
-              </div>
-              <p class="product-footnote">Illustrative interface · example content · no live business data</p>
+              <img class="feature-project__image" src="assets/knowledge-assistant.png" alt="Dify 企业知识库采购问答与制度引用页面的真实截图。" loading="eager" decoding="async" />
+            </a>
+            <div class="feature-project__copy">
+              <p class="project-index">01 / Enterprise knowledge</p>
+              <h3>企业 AI<br />知识库助手</h3>
+              <div class="feature-project__stack" aria-label="技术栈"><span class="stack-pill">飞书</span><span class="stack-pill">Dify</span><span class="stack-pill">智谱 GLM</span></div>
+              <p class="feature-project__description">员工用自然语言查询企业制度与采购规则，系统依据检索到的知识内容组织回答并提供引用。</p>
+              <ul class="feature-project__capabilities">
+                <li>检索企业制度，回答保留来源线索。</li>
+                <li>支持采购问题查询与办理指引。</li>
+                <li>问答独立运行，不直接触发真实审批。</li>
+              </ul>
+              <span class="feature-project__note">真实 Dify 问答界面截图 · 通过 Hub 进入完整项目</span>
+              <a class="feature-project__open" href="https://hub.danielxu.cn/flowops/knowledge" target="_blank" rel="noopener noreferrer">查看项目 <span aria-hidden="true">↗</span></a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="copy copy--right">
-          <p class="eyebrow">AI, with a human in the loop</p>
-          <h2>Useful before it’s automatic.</h2>
-          <p>Let AI reveal patterns. Keep evidence, judgment and the final call visible.</p>
+          <article class="feature-project">
+            <a class="feature-project__window" href="https://hub.danielxu.cn/flowops" target="_blank" rel="noopener noreferrer" aria-label="打开企业采购审批自动化">
+              <div class="feature-project__browser-bar" aria-hidden="true">
+                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+                <span class="feature-project__address">hub.danielxu.cn/flowops</span><span class="feature-project__browser-state">FlowOps AI</span>
+              </div>
+              <img class="feature-project__image" src="assets/procurement-flowops.png" alt="FlowOps AI 采购审批交互演示页面的真实截图，标注使用虚构数据。" loading="lazy" decoding="async" />
+            </a>
+            <div class="feature-project__copy">
+              <p class="project-index">02 / Approval automation</p>
+              <h3>企业采购<br />审批自动化</h3>
+              <div class="feature-project__stack" aria-label="技术栈"><span class="stack-pill">飞书</span><span class="stack-pill">n8n</span><span class="stack-pill">智谱 GLM</span></div>
+              <p class="feature-project__description">展示从知识问答、员工申请、主管审批到采购建单、AI 辅助分析与人工执行的流程设计。</p>
+              <ul class="feature-project__capabilities">
+                <li>查看只读的已验收采购案例。</li>
+                <li>切换批准、拒绝与重复事件的流程模拟。</li>
+                <li>审批由主管决定；AI 不代替审批或实际采购。</li>
+              </ul>
+              <span class="feature-project__note">流程模拟 · 示例数据 · 未连接真实业务系统</span>
+              <a class="feature-project__open" href="https://hub.danielxu.cn/flowops" target="_blank" rel="noopener noreferrer">查看项目 <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="feature-project">
+            <a class="feature-project__window" href="https://hub.danielxu.cn/daily-brief" target="_blank" rel="noopener noreferrer" aria-label="打开 AI 企业运营情报简报">
+              <div class="feature-project__browser-bar" aria-hidden="true">
+                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+                <span class="feature-project__address">hub.danielxu.cn/daily-brief</span><span class="feature-project__browser-state">Daily brief</span>
+              </div>
+              <img class="feature-project__image" src="assets/daily-brief.jpg" alt="Hub 上 AI 企业运营情报简报真实页面截图，页面明确标注演示数据。" loading="lazy" decoding="async" />
+            </a>
+            <div class="feature-project__copy">
+              <p class="project-index">03 / Daily intelligence</p>
+              <h3>AI 企业运营<br />情报简报</h3>
+              <div class="feature-project__stack" aria-label="技术栈"><span class="stack-pill">飞书</span><span class="stack-pill">n8n</span><span class="stack-pill">GLM-4-Flash</span><span class="stack-pill">Project Hub</span></div>
+              <p class="feature-project__description">将已保存的运营快照整理为头条、关键变化、管理风险与优先行动，并保留历史比较和数据依据。</p>
+              <ul class="feature-project__capabilities">
+                <li>依据已标记测试记录与专用演示项目生成摘要。</li>
+                <li>无历史基线时说明缺少对比，不补造变化。</li>
+                <li>飞书群推送待授权，当前未发送。</li>
+              </ul>
+              <span class="feature-project__note">公开页面截图 · 当前展示内容含测试数据与虚构演示项目，不代表生产业务</span>
+              <a class="feature-project__open" href="https://hub.danielxu.cn/daily-brief" target="_blank" rel="noopener noreferrer">查看项目 <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -498,35 +488,21 @@
     (() => {
       if (!window.gsap || !window.ScrollTrigger) {
         console.error('GSAP or ScrollTrigger failed to load.');
+        document.querySelector('#loader')?.remove();
         return;
       }
       gsap.registerPlugin(ScrollTrigger);
 
       gsap.from('.intro__content', { opacity: 0, y: 35, duration: 1.2, ease: 'power3.out' });
 
-      const desktop = ScrollTrigger.matchMedia();
-      desktop.add('(min-width: 1024px)', () => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '#showcase', start: 'top top', end: 'bottom bottom', pin: '.showcase__pin', scrub: .65,
-            anticipatePin: 1, invalidateOnRefresh: true
-          }
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.utils.toArray('.feature-project').forEach((item, index) => {
+          gsap.fromTo(item, { y: 28, opacity: 0 }, {
+            y: 0, opacity: 1, duration: .7, delay: index * .04, ease: 'power2.out',
+            scrollTrigger: { trigger: item, start: 'top 84%', once: true }
+          });
         });
-        tl.fromTo('.showcase__browser', { x: 0, y: 24, scale: .94, opacity: .84 }, { x: 0, y: 0, scale: .98, opacity: 1, duration: .8, ease: 'power2.out' })
-          .fromTo('.copy--left', { x: -22, opacity: 0 }, { x: 0, opacity: 1, duration: .7, ease: 'power2.out' }, .25)
-          .to('.copy--left', { x: -8, opacity: .28, duration: .48, ease: 'power2.in' }, 1.3)
-          .to('.showcase__browser', { x: -28, y: -8, scale: 1.045, duration: 1, ease: 'power1.inOut' }, 1.3)
-          .fromTo('.copy--right', { x: 22, opacity: 0 }, { x: 0, opacity: 1, duration: .8, ease: 'power2.out' }, 1.65);
-        return () => tl.kill();
-      });
-      desktop.add('(max-width: 1023px)', () => {
-        gsap.set(['.copy--left', '.copy--right', '.showcase__browser'], { clearProps: 'all' });
-        const reveals = gsap.utils.toArray('.copy--left, .showcase__browser, .copy--right');
-        reveals.forEach((item) => gsap.fromTo(item, { y: 18, opacity: 0 }, {
-          y: 0, opacity: 1, duration: .65, ease: 'power2.out',
-          scrollTrigger: { trigger: item, start: 'top 88%', once: true }
-        }));
-      });
+      }
 
       gsap.fromTo('.workspace-window', { y: 70, scale: .94, opacity: .35 }, {
         y: 0, scale: 1, opacity: 1, ease: 'none',
