@@ -1,7 +1,7 @@
 # Changelog
 
-## 2026-09-26
+## 2026-10-16
 
-- Restored the complete portfolio HTML snapshot from Codex session history.
-- Preserved the recovered page source, including its animations and Spline fallback.
-- Published the static site from `main` with GitHub Pages.
+- Finalize the five-section job application portfolio.
+- Replace retired mock sections with two real product previews.
+- Compress screenshots to WebP, host animation libraries locally, remove perpetual animation and loading mask, support reduced motion.

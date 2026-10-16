@@ -1,21 +1,9 @@
 # Handoff
 
-## Current state
+Updated: 2026-10-16
 
-- **Updated:** 2026-09-26
-- **Status:** published on GitHub Pages
-- **Last completed:** Restored the source snapshot, verified Loader, desktop Pin/Scrub, Lenis synchronization, cursor, reverse scrolling, mobile breakpoint behavior, fallback rendering, and clean browser console; public Pages URL returned HTTP 200 with expected page content.
+Final five-section portfolio implemented. Removed the simulated Workspace V2.5 interface, AI Content Intelligence, six early experiments, loading overlay and custom cursor. Flagship project previews and browser windows remain. Selected Products uses authentic Hub screenshots, with login requirements stated.
 
-## Next action
+No build. Preview: python -m http.server 8767 --bind 127.0.0.1
 
-Replace the placeholder Spline URL and contact/social links when final project details are ready.
-
-## How to resume
-
-1. Check `git status`.
-2. Serve with `python -m http.server 8767 --bind 127.0.0.1`.
-3. Read this file and `README.md` before continuing. The live URL is https://danielsxujiacong-cell.github.io/personal-portfolio/.
-
-## Open questions or risks
-
-- The Spline URL and contact/social destinations remain placeholders in the recovered page.
+GitHub Pages publishes main at https://danielsxujiacong-cell.github.io/personal-portfolio/ . The custom domain danielxu.cn resolves to EdgeOne rather than GitHub Pages; verify it independently after push.
