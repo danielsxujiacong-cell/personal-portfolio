@@ -9,3 +9,9 @@
 ## 2026-10-24 · 最小 SEO 优化
 
 - 中文标题与介绍补充 Daniel Xu（徐嘉聪）、AI 自动化、独立开发与作品集；新增根页面 canonical、robots.txt 与 sitemap.xml。静态 HTML，无构建步骤。
+
+## 2026-10-29 · Personal identity SEO
+
+- Unified title, H1, description, and homepage copy around 徐嘉聪 Daniel Xu and the confirmed AI automation / indie developer positioning.
+- Added connected WebSite, ProfilePage, and Person JSON-LD using the confirmed canonical homepage and GitHub profile.
+- Clarified FlowOps AI as an end-to-end automation workflow and disclosed simulation content.
