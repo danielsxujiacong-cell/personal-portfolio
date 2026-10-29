@@ -6,4 +6,4 @@ The confirmed identity positioning is live on `https://danielxu.cn/` at commit `
 
 Google Search Console reports the homepage is on Google. After deployment, one indexing request was accepted into the priority crawl queue; wait for recrawl and do not submit again.
 
-The username-matching public profile repository is live at `https://github.com/danielsxujiacong-cell/danielsxujiacong-cell`, commit `71cf215`. Account name, bio, and blog fields remain pending because the current GitHub CLI token lacks `user` scope; finish the official device authorization before changing those fields.
+The username-matching public GitHub profile repository is live at `https://github.com/danielsxujiacong-cell/danielsxujiacong-cell`; its README contains the confirmed identity positioning, five selected projects, official portfolio and Hub links, and transparent AI-assisted development wording. The GitHub account name, bio, and website fields were updated and verified through the public user API on 2026-10-29. Profile repository handoff is current through `1ba6f06`.
