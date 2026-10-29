@@ -17,3 +17,5 @@
 - Clarified FlowOps AI as an end-to-end automation workflow and disclosed simulation content.
 
 - Verified deployment of identity SEO commit `a2dc5f3`; Search Console confirmed the homepage is on Google and accepted one priority crawl request.
+
+- GitHub public profile fields are now live and verified; the user completed the required OAuth scope authorization.
