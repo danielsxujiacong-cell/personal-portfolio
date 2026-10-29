@@ -1,6 +1,6 @@
 # Daniel Xu Personal Portfolio
 
-Static HTML, CSS and native JavaScript portfolio for 徐嘉聪 Daniel Xu. It presents the positioning **AI Automation Practitioner & Indie Developer** / **AI 自动化实践者 · 独立开发者**, project work, product previews, and the process from problem discovery to deployment. AI-assisted development is described transparently; no unsupported employment, client, revenue, or user-scale claims are made.
+Static HTML, CSS and native JavaScript portfolio for 徐嘉聪 Daniel Xu. It presents the positioning **AI Automation Practitioner & Indie Developer** / **AI 自动化实践者 · 独立开发者**, project work, product previews, and the process from problem discovery to deployment. The portfolio connects product thinking with AI-assisted implementation, system integration, testing, and online delivery.
 
 ## Preview
 

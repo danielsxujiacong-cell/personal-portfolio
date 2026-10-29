@@ -19,3 +19,7 @@
 - Verified deployment of identity SEO commit `a2dc5f3`; Search Console confirmed the homepage is on Google and accepted one priority crawl request.
 
 - GitHub public profile fields are now live and verified; the user completed the required OAuth scope authorization.
+
+## 2026-10-29 · Brand copy
+
+- Removed self-defensive wording from the public portfolio and profile README; rewrote project details as concise positive descriptions while retaining demo labels.
