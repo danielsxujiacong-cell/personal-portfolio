@@ -1,18 +1,9 @@
 # Handoff
 
-Updated: 2026-10-16
+Updated: 2026-10-29
 
-Final five-section portfolio implemented. Removed the simulated Workspace V2.5 interface, AI Content Intelligence, six early experiments, loading overlay and custom cursor. Flagship project previews and browser windows remain. Selected Products uses authentic Hub screenshots, with login requirements stated.
+The confirmed identity positioning is live on `https://danielxu.cn/` at commit `a2dc5f3`. Its title, H1, description, homepage copy, and WebSite/ProfilePage/Person JSON-LD were verified in the live HTML. Canonical, robots.txt, and sitemap.xml were already correct and remain intact.
 
-No build. Preview: python -m http.server 8767 --bind 127.0.0.1
+Google Search Console reports the homepage is on Google. After deployment, one indexing request was accepted into the priority crawl queue; wait for recrawl and do not submit again.
 
-GitHub Pages publishes main at https://danielsxujiacong-cell.github.io/personal-portfolio/ . The custom domain danielxu.cn resolves to EdgeOne rather than GitHub Pages; verify it independently after push.
-
-## 2026-10-24 · SEO
-
-中文标题与介绍补充 Daniel Xu（徐嘉聪）、AI 自动化、独立开发与作品集；新增根页面 canonical、robots.txt 与 sitemap.xml。静态 HTML，无构建步骤。
-推送后需核对自定义域名已更新；搜索平台归属验证与 sitemap 提交由用户完成。
-
-## 2026-10-29 · Personal identity SEO
-
-Unified homepage title/H1/description and identity copy; added WebSite/ProfilePage/Person structured data. Existing canonical, robots, and sitemap were verified and retained. Local source is ready; live site remains pending until deployment completes.
+The username-matching public profile repository is live at `https://github.com/danielsxujiacong-cell/danielsxujiacong-cell`, commit `71cf215`. Account name, bio, and blog fields remain pending because the current GitHub CLI token lacks `user` scope; finish the official device authorization before changing those fields.

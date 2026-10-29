@@ -15,3 +15,5 @@
 - Unified title, H1, description, and homepage copy around 徐嘉聪 Daniel Xu and the confirmed AI automation / indie developer positioning.
 - Added connected WebSite, ProfilePage, and Person JSON-LD using the confirmed canonical homepage and GitHub profile.
 - Clarified FlowOps AI as an end-to-end automation workflow and disclosed simulation content.
+
+- Verified deployment of identity SEO commit `a2dc5f3`; Search Console confirmed the homepage is on Google and accepted one priority crawl request.
