@@ -101,6 +101,54 @@
     .site-footer { text-align: center; color: #999; padding: 0 20px 25px; font-size: 12px; }
     @media(max-width:1023px) { .feature-project, .feature-project:nth-child(even) { grid-template-columns: minmax(0,1fr); gap: 28px; } .feature-project:nth-child(even) .feature-project__window, .feature-project:nth-child(even) .feature-project__copy { grid-column: auto; grid-row: auto; } .feature-project__copy { max-width: 660px; } .showcase__heading { align-items: start; flex-direction: column; gap: 20px; } .showcase__heading-copy { max-width: 500px; } }
     @media(max-width:767px) { .site-nav { padding: 18px 7vw; } .site-nav nav { gap: 15px; } .intro { min-height: 85svh; } .intro__sub { font-size: 17px; } .intro__description { font-size: 14px; } .content-heading { gap: 20px; margin-bottom: 36px; } .content-heading h2, .showcase__heading h2 { font-size: clamp(2.6rem,12vw,4rem); line-height: 1.04; } .product-grid { grid-template-columns: 1fr; } .product-copy { padding: 22px; } .work-steps { grid-template-columns: 1fr; } .work-step { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 22px 0; border-bottom: 1px solid #292929; } .work-step span { padding-top: 5px; } .work-step h3 { margin: 0; } .work-step p { grid-column: 2; margin: 0; } .capabilities { grid-template-columns: 1fr 1fr; gap: 24px 16px; } .links { gap: 20px; flex-wrap: wrap; } .feature-project__copy h3 { font-size: 36px; line-height: 1.1; } .feature-project__browser-state { display: none; } .feature-project__address { width: 65%; left: 61%; } .feature-project__browser-bar { padding: 0 10px; } .browser-dot { width: 6px; height: 6px; } }
+    .showcase-projects:focus-visible { outline: 2px solid #93b6ff; outline-offset: 5px; }
+    .showcase-projects.is-carousel { display: block; position: relative; overflow: visible; padding: 0; perspective: 1800px; width: calc(100% + 14vw); margin-left: -7vw; touch-action: pan-y pinch-zoom; cursor: grab; user-select: none; }
+    .showcase-projects.is-dragging { cursor: grabbing; }
+    .is-carousel .feature-project, .is-carousel .feature-project:nth-child(even) { position: absolute; top: 0; left: 12%; width: 76%; min-width: 0; grid-template-columns: minmax(0,1.5fr) minmax(280px,.7fr); gap: 36px; padding: 32px; border: 1px solid rgba(163,185,226,.18); border-radius: 26px; background: linear-gradient(135deg,#171b23,#101216 65%); box-shadow: 0 35px 80px #0009, 0 1px 0 #ffffff0a inset; transform-origin: center; will-change: transform; }
+    .is-carousel .feature-project:nth-child(even) .feature-project__window { grid-column: 1; grid-row: 1; }
+    .is-carousel .feature-project:nth-child(even) .feature-project__copy { grid-column: 2; grid-row: 1; }
+    .is-carousel .feature-project__copy h3 { font-size: 44px; line-height: 1.08; }
+    .is-carousel .feature-project__window { box-shadow: 0 15px 36px #0006; border-radius: 14px; }
+    .is-carousel .feature-project__window:hover { transform: none; }
+    .is-carousel .feature-project__description { font-size: 15px; }
+    .showcase-controls { display: none; }
+    .is-carousel .showcase-controls { display: block; position: absolute; inset: 0; z-index: 110; pointer-events: none; }
+    .showcase-controls button { position: absolute; top: var(--arrow-y); width: 48px; height: 48px; display: grid; place-items: center; padding: 0; transform: translate(-50%,-50%); border: 1px solid #c4d3ee40; border-radius: 50%; background: #171d29e6; backdrop-filter: blur(16px); color: #eef3ff; box-shadow: 0 6px 24px #0008; font: inherit; font-size: 30px; line-height: 1; cursor: pointer; pointer-events: auto; transition: background .2s, border-color .2s; }
+    .showcase-controls button:hover { background: #29364bea; border-color: #c4d3ee80; }
+    .showcase-prev { left: 12%; } .showcase-next { left: 88%; }
+    .showcase-controls button:focus-visible { outline: 2px solid #93b6ff; outline-offset: 5px; }
+    .showcase-position { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    @media(max-width:1023px) {
+      .showcase-projects.is-carousel { perspective: 1000px; }
+      .is-carousel .feature-project, .is-carousel .feature-project:nth-child(even) { left: 9%; width: 82%; grid-template-columns: minmax(0,1fr); gap: 24px; padding: 24px; border-radius: 22px; }
+      .is-carousel .feature-project:nth-child(even) .feature-project__window, .is-carousel .feature-project:nth-child(even) .feature-project__copy { grid-column: auto; grid-row: auto; }
+      .showcase-prev { left: 9%; } .showcase-next { left: 91%; }
+    }
+    @media(max-width:767px) {
+      .is-carousel .feature-project, .is-carousel .feature-project:nth-child(even) { padding: 16px; }
+      .is-carousel .feature-project__copy h3 { font-size: 32px; }
+      .is-carousel .feature-project__description { font-size: 14px; }
+      .is-carousel .feature-project__capabilities li { font-size: 11px; }
+      .is-carousel .feature-project__note { font-size: 10px; }
+      .is-carousel .feature-project__address { font-size: 7px; }
+      .showcase-controls button { width: 44px; height: 44px; font-size: 27px; }
+    }
+
+@media(min-width:1024px){
+.showcase__inner {width:min(100%,1160px);}
+.showcase-projects.is-carousel {width:100%;margin-left:0;clip-path:inset(-30px 0 -65px);}
+.is-carousel .feature-project,.is-carousel .feature-project:nth-child(even) {left:8%;width:84%;padding:26px;gap:28px;grid-template-columns:minmax(0,1.4fr) minmax(270px,.8fr);border-radius:24px;}
+.is-carousel .feature-project__copy h3 {font-size:36px;}
+.is-carousel .feature-project__description {font-size:14px;}
+.is-carousel .feature-project__capabilities {gap:9px;margin-top:18px;}
+.is-carousel .feature-project__note {margin-top:16px;}
+.is-carousel .feature-project__open {margin-top:18px;}
+.showcase-prev {left:8%;}.showcase-next {left:92%;}
+.showcase-controls button {width:44px;height:44px;font-size:27px;}
+.showcase-projects.is-carousel::before,.showcase-projects.is-carousel::after {content:'';position:absolute;top:0;bottom:0;width:44px;z-index:105;pointer-events:none;}
+.showcase-projects.is-carousel::before {left:0;background:linear-gradient(90deg,#0d0d0d,transparent);}
+.showcase-projects.is-carousel::after {right:0;background:linear-gradient(-90deg,#0d0d0d,transparent);}
+}
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
   </style>
   <meta name="description" content="徐嘉聪 Daniel Xu｜AI 自动化实践者 · 独立开发者。专注企业内部流程自动化、AI 应用落地、AI 辅助开发与独立产品交付。查看 FlowOps AI、Daniel Workspace、AI Investment Dashboard、Offline Board Games 和 Pomodoro Focus 项目。" />
@@ -154,7 +202,7 @@
           <p class="showcase__heading-copy">把企业知识、审批流程与日常运营信息放进清晰可追溯的工作链路。</p>
         </header>
 
-        <div class="showcase-projects">
+        <div class="showcase-projects" id="featured-projects" tabindex="0" role="region" aria-roledescription="轮播" aria-label="精选项目，可左右拖动或使用方向键切换">
           <article class="feature-project">
             <a class="feature-project__window" href="https://hub.danielxu.cn/flowops/knowledge" target="_blank" rel="noopener noreferrer" aria-label="打开企业 AI 知识库助手">
               <div class="feature-project__browser-bar" aria-hidden="true">
@@ -224,6 +272,11 @@
             </div>
           </article>
         </div>
+        <div class="showcase-controls" aria-label="切换精选项目">
+          <button type="button" class="showcase-prev" aria-label="上一个项目" aria-controls="featured-projects">‹</button>
+          <span class="showcase-position" aria-live="polite" aria-atomic="true">01 / 03</span>
+          <button type="button" class="showcase-next" aria-label="下一个项目" aria-controls="featured-projects">›</button>
+        </div>
       </div>
     </section>
 
@@ -238,10 +291,124 @@
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const projects = document.querySelector('.showcase-projects');
+  const slides = [...projects.querySelectorAll('.feature-project')];
+  const controls = document.querySelector('.showcase-controls');
+  const position = controls.querySelector('.showcase-position');
+  const links = slides.map(slide => [...slide.querySelectorAll('a')]);
+  projects.append(controls);
+  projects.classList.add('is-carousel');
+  let current = 0, target = 0, carouselFrame = 0, previousTime = 0, active = 0;
+  let pointer = null, dragging = false, suppressClick = false;
+  const render = () => {
+    const compact = innerWidth < 1024;
+    slides.forEach((slide, index) => {
+      const offset = ((index - current + 1.5) % 3 + 3) % 3 - 1.5;
+      const distance = Math.abs(offset);
+      slide.style.transform = `translateX(${offset * (compact ? 80 : 82)}%) translateZ(${-distance * (compact ? 90 : 160)}px) rotateY(${-offset * (motion.matches ? 0 : 12)}deg) scale(${1 - distance * .1})`;
+      slide.style.filter = `blur(${motion.matches ? 0 : distance * (compact ? 1 : 1.5)}px) brightness(${1 - distance * .38})`;
+      slide.style.zIndex = 100 - Math.round(distance * 20);
+    });
+  };
+  const announce = () => {
+    active = ((target % slides.length) + slides.length) % slides.length;
+    const selected = slides[active];
+    const preview = selected.querySelector('.feature-project__window');
+    projects.style.setProperty('--arrow-y', `${innerWidth < 1024 ? preview.offsetTop + preview.offsetHeight / 2 : selected.offsetHeight / 2}px`);
+    position.textContent = `第 ${active + 1} 个项目，共 ${slides.length} 个`;
+    slides.forEach((slide, index) => {
+      slide.setAttribute('aria-hidden', String(index !== active));
+      links[index].forEach(link => { link.tabIndex = index === active ? 0 : -1; });
+    });
+  };
+  const animate = time => {
+    const elapsed = previousTime ? Math.min(time - previousTime, 40) : 16;
+    previousTime = time;
+    current += (target - current) * (1 - Math.exp(-elapsed / 85));
+    if (Math.abs(target - current) < .001) current = target;
+    render();
+    if (current !== target) carouselFrame = requestAnimationFrame(animate);
+    else { carouselFrame = 0; previousTime = 0; }
+  };
+  const showProject = index => {
+    target = index;
+    announce();
+    if (motion.matches) { cancelAnimationFrame(carouselFrame); carouselFrame = 0; current = target; render(); }
+    else if (!carouselFrame) carouselFrame = requestAnimationFrame(animate);
+  };
+  controls.querySelector('.showcase-prev').addEventListener('click', () => showProject(target - 1));
+  controls.querySelector('.showcase-next').addEventListener('click', () => showProject(target + 1));
+  projects.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      showProject(target + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  projects.addEventListener('pointerdown', event => {
+    suppressClick = false;
+    if (!event.isPrimary || event.button !== 0 || event.target.closest('button')) return;
+    pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, start: current, time: performance.now() };
+  });
+  projects.addEventListener('pointermove', event => {
+    if (!pointer || pointer.id !== event.pointerId) return;
+    const dx = event.clientX - pointer.x, dy = event.clientY - pointer.y;
+    if (!dragging) {
+      if (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)) { pointer = null; return; }
+      if (Math.abs(dx) < 8) return;
+      dragging = true;
+      cancelAnimationFrame(carouselFrame); carouselFrame = 0; previousTime = 0;
+      projects.setPointerCapture(event.pointerId);
+      projects.classList.add('is-dragging');
+    }
+    current = pointer.start - dx / (slides[0].offsetWidth * .8);
+    render();
+  });
+  const release = event => {
+    if (!pointer || pointer.id !== event.pointerId) return;
+    if (dragging) {
+      const dx = event.clientX - pointer.x;
+      const fast = Math.abs(dx) > 24 && Math.abs(dx) / Math.max(performance.now() - pointer.time, 1) > .45;
+      const destination = fast ? Math.round(pointer.start) - Math.sign(dx) : Math.round(current);
+      suppressClick = true;
+      dragging = false;
+      projects.classList.remove('is-dragging');
+      if (projects.hasPointerCapture(event.pointerId)) projects.releasePointerCapture(event.pointerId);
+      showProject(event.type === 'pointercancel' ? Math.round(current) : destination);
+    }
+    pointer = null;
+  };
+  projects.addEventListener('pointerup', release);
+  projects.addEventListener('pointercancel', release);
+  projects.addEventListener('dragstart', event => event.preventDefault());
+  projects.addEventListener('click', event => {
+    if (suppressClick) { event.preventDefault(); event.stopPropagation(); suppressClick = false; return; }
+    const slide = event.target.closest('.feature-project');
+    if (slide && slides.indexOf(slide) !== active) {
+      event.preventDefault();
+      const offset = ((slides.indexOf(slide) - active + 1.5) % 3 + 3) % 3 - 1.5;
+      showProject(target + Math.sign(offset));
+    }
+  }, true);
+  const layout = () => {
+    projects.style.height = `${Math.max(...slides.map(slide => slide.offsetHeight))}px`;
+    const slide = slides[active];
+    const preview = slide.querySelector('.feature-project__window');
+    const arrowY = innerWidth < 1024 ? preview.offsetTop + preview.offsetHeight / 2 : slide.offsetHeight / 2;
+    projects.style.setProperty('--arrow-y', `${arrowY}px`);
+    render();
+    window.ScrollTrigger?.refresh();
+  };
+  const observer = new ResizeObserver(layout);
+  slides.forEach(slide => observer.observe(slide));
+  slides.forEach(slide => { slide.querySelector('img').loading = 'eager'; });
+  window.addEventListener('resize', layout);
+  motion.addEventListener('change', () => { current = target; render(); });
+  announce();
+  layout();
   if (motion.matches || !window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
   const context = gsap.context(() => {
-    gsap.utils.toArray('.feature-project, .product-card, .content-heading, .work-step, .capabilities').forEach(item => {
+    gsap.utils.toArray('.showcase-projects, .product-card, .content-heading, .work-step, .capabilities').forEach(item => {
       gsap.from(item, { y: 22, opacity: 0, duration: .65, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 94%', toggleActions: 'play none none reverse' } });
     });
   });
